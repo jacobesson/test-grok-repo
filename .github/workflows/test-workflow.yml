@@ -1,0 +1,19 @@
+name: Test Workflow
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run test script
+      run: python test_script.py
+
+    - name: Hello from GitHub Actions
+      run: echo "Hello from GitHub Actions! Workflow is working. 🚀"
